@@ -2,7 +2,7 @@
 
 require_once 'gilded_rose.php';
 
-echo "OMGHAI!\n";
+echo "OMGHAI!<br>";
 
 $items = array(
     new Item('+5 Dexterity Vest', 10, 20),
@@ -20,9 +20,9 @@ $items = array(
 $app = new GildedRose($items);
 
 $days = 2;
-if (count($argv) > 1) {
-    $days = (int) $argv[1];
-}
+//if (count($argv) > 1) {
+//    $days = (int) $argv[1];
+//}
 
 for ($i = 0; $i < $days; $i++) {
     echo("-------- day $i --------<br>");
