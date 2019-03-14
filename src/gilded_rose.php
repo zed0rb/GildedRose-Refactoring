@@ -37,10 +37,6 @@ class GildedRose {
                         $item->quality += 1;
                     }
 
-                    if ($item->quality > 50) {
-                        $item->quality = 50;
-                    }
-
                     if ($item->sell_in <= 0) {
                         $item->quality = 0;
                     }
@@ -77,6 +73,13 @@ class GildedRose {
             if ($item->quality <= 0) {
                 $item->quality = 0;
             }
+
+            if ($item->name != 'Sulfuras, Hand of Ragnaros'){
+                if ($item->quality > 50) {
+                    $item->quality = 50;
+                }
+            }
+
         }
     }
 }
