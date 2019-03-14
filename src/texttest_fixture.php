@@ -2,7 +2,7 @@
 
 require_once 'gilded_rose.php';
 
-echo "OMGHAI!<br>";
+echo "OMGHAI!\n";
 
 $items = array(
     new Item('+5 Dexterity Vest', 10, 20),
