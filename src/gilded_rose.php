@@ -20,10 +20,6 @@ class GildedRose {
                         $item->quality += 1;
                     }
 
-                    if ($item->quality > 50) {
-                        $item->quality = 50;
-                    }
-
                     break;
 
                 case  'Backstage passes to a TAFKAL80ETC concert':
