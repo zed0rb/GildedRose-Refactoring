@@ -10,50 +10,58 @@ class GildedRose {
 
     function update_quality() {
         foreach ($this->items as $item) {
-            if ($item->name == 'Aged Brie') {
-                $item->quality += 1;
-                $item->sell_in -= 1;
 
-                if ($item->sell_in <= 0) {
+            switch ($item->name) {
+                case 'Aged Brie':
                     $item->quality += 1;
-                }
+                    $item->sell_in -= 1;
 
-                if ($item->quality > 50) {
-                    $item->quality = 50;
-                }
+                    if ($item->sell_in <= 0) {
+                        $item->quality += 1;
+                    }
 
-            } elseif ($item->name == 'Backstage passes to a TAFKAL80ETC concert') {
-                $item->quality += 1;
+                    if ($item->quality > 50) {
+                        $item->quality = 50;
+                    }
 
-                if ($item->name <= 10) {
+                    break;
+
+                case  'Backstage passes to a TAFKAL80ETC concert':
                     $item->quality += 1;
-                }
 
-                if ($item->name <= 5) {
-                    $item->quality += 1;
-                }
+                    if ($item->name <= 10) {
+                        $item->quality += 1;
+                    }
 
-                if ($item->quality > 50) {
-                    $item->quality = 50;
-                }
+                    if ($item->name <= 5) {
+                        $item->quality += 1;
+                    }
 
-                if ($item->name <= 0) {
-                    $item->quality = 0;
-                }
+                    if ($item->quality > 50) {
+                        $item->quality = 50;
+                    }
 
-                $item->sell_in -= 1;
+                    if ($item->sell_in <= 0) {
+                        $item->quality = 0;
+                    }
 
-            } elseif ($item->name == 'Sulfuras, Hand of Ragnaros') {
+                    $item->sell_in -= 1;
+                    break;
 
-                // emty for reason
+                case 'Sulfuras, Hand of Ragnaros':
 
-            } else {
-                $item->quality -= 1;
-                $item->sell_in -= 1;
+                    // emty for reason
+                    break;
 
-                if ($item->sell_in <= 0) {
+                default:
                     $item->quality -= 1;
-                }
+                    $item->sell_in -= 1;
+
+                    if ($item->sell_in <= 0) {
+                        $item->quality -= 1;
+                    }
+
+                    break;
             }
         }
     }
