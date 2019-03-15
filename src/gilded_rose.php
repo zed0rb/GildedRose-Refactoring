@@ -25,11 +25,11 @@ class GildedRose {
                 case  'Backstage passes to a TAFKAL80ETC concert':
                     ++$item->quality;
 
-                    if ($item->name <= 10) {
+                    if ($item->sell_in <= 10) {
                         ++$item->quality;
                     }
 
-                    if ($item->name <= 5) {
+                    if ($item->sell_in <= 5) {
                         ++$item->quality;
                     }
 
